@@ -23,11 +23,39 @@ int main()
   const double PERC99 = 0.4;
   const double PERC100 = 0.5;
   const double Price = 99.00;
-  double totalCost, originalAmount, discountAmount;
+  double totalCost, originalAmount, discountAmount, dRate;
+  int numberofSold;
 
-  //**************************************************
-  /* Make your code here */
-  //**************************************************
+  cout << "Enter the number of units sold\n";
+  // TODO
+  cin >> numberofSold;
+
+  // Input Validation
+  // TODO
+  if (numberofSold < 0)
+  {
+    cout << "Input should be a positive number\n";
+    exit(0);
+  }
+
+  // Determine discount rate based on quantity
+  // TODO
+  if (numberofSold < 10)
+    dRate = 0.0;
+  else if (numberofSold < 20)
+    dRate = PERC19;
+  else if (numberofSold < 50)
+    dRate = PERC49;
+  else if (numberofSold < 100)
+    dRate = PERC99;
+  else
+    dRate = PERC100;
+
+  // Calculate original amount, discount, and total
+  // TODO
+  originalAmount = numberofSold * Price;
+  discountAmount = originalAmount * dRate;
+  totalCost = originalAmount - discountAmount;
 
   /* To print out your result, use the following statements */
   cout << setprecision(2) << fixed;
